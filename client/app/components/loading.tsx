@@ -11,7 +11,7 @@ const Loader = () => {
         backdropFilter: 'blur(10px)'
       }}
     >
-      {/* Animated Logo */}
+    
       <div className="mb-8 flex items-center gap-4 animate-pulse">
         <Gamepad2 
           className="h-12 w-12 text-white" 
@@ -23,14 +23,14 @@ const Loader = () => {
         </div>
       </div>
       
-      {/* Loader */}
+    
       <HashLoader
         color="#14b8a6"
         size={80}
         speedMultiplier={0.7}
       />
       
-      {/* Subtle Loading Text */}
+     
       <p 
         className="font-josefinSans mt-8 text-xl text-white/70 tracking-widest uppercase"
         style={{
@@ -41,7 +41,7 @@ const Loader = () => {
         ARE U READY TO GAME 🚀
       </p>
       
-      {/* Custom Animation Styles */}
+      
       <style jsx>{`
         @keyframes fadeInOut {
           0%, 100% { opacity: 0.5; }

@@ -68,7 +68,7 @@ const AboutPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-950 text-gray-200 overflow-hidden relative">
-      {/* Navigation */}
+     
       <nav className="font-noto fixed w-full z-50 top-0 border-b border-gray-800">
         <div className="container mx-auto px-4 py-2 flex flex-wrap justify-between items-center">
           <div className="flex-shrink-0 ml-0 flex items-center space-x-2">
@@ -81,8 +81,7 @@ const AboutPage = () => {
               PixelPlay
             </span>
           </div>
-          
-          {/* Mobile Menu Button */}
+         
           <button 
             className="md:hidden p-2 text-gray-300 hover:text-teal-400"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -96,7 +95,7 @@ const AboutPage = () => {
             </svg>
           </button>
 
-          {/* Navigation Links */}
+        
           <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex w-full md:w-auto md:ml-auto flex-col md:flex-row items-center md:space-x-12 space-y-4 md:space-y-0 pb-4 md:pb-0 mt-4 md:mt-0`}>
             <button 
               onClick={() => router.push('/')}
@@ -128,9 +127,9 @@ const AboutPage = () => {
         {renderPixelBackground()}
       </motion.div>
 
-      {/* Content Container */}
+     
       <div className="relative z-10 container mx-auto mt-20 px-4 py-16 space-y-16">
-       {/* Mission Section */}
+     
         <motion.div 
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -144,9 +143,9 @@ const AboutPage = () => {
           </p>
         </motion.div>
 
-        {/* Vision Sections */}
+       
         <div className="font-josefinSans space-y-16">
-          {/* Community */}
+        
           <motion.div 
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -160,7 +159,7 @@ const AboutPage = () => {
             </p>
           </motion.div>
 
-          {/* Innovation */}
+          
           <motion.div 
             initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -192,7 +191,7 @@ const AboutPage = () => {
        
       </div>
 
-      {/* Pixel Move Animation */}
+     
       <style jsx global>{`
         @keyframes pixelMove {
           0% { transform: translateY(0) rotate(0deg); }

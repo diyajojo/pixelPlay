@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Trophy, ChevronLeft, Medal, Star, Target } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
-// Explicitly define the Player interface with strict typing
+
 interface Player {
   rank: number;
   name: string;
@@ -11,16 +11,16 @@ interface Player {
   country: string;
 }
 
-// Define a type for the leaderboard tabs to ensure type safety
+
 type LeaderboardTab = 'global' | 'fps' | 'moba';
 
 const LeaderboardPage = () => {
   const router = useRouter();
   
-  // Use the LeaderboardTab type to constrain the state
+ 
   const [activeTab, setActiveTab] = useState<LeaderboardTab>('global');
 
-  // Use Record type to ensure type safety for leaderboard data
+
   const leaderboardData: Record<LeaderboardTab, Player[]> = {
     global: [
       { rank: 1, name: 'DragonSlayer99', score: 25340, country: '🇺🇸' },
@@ -43,9 +43,9 @@ const LeaderboardPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-950 text-gray-200 flex">
-      {/* Left Side Design Section */}
+      
       <div className="w-1/2 relative overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 flex flex-col justify-center items-center p-12">
-        {/* Gaming Logo Image */}
+      
         <div className="relative z-20 mb-8">
           <img 
             src="/assets/gamer.jpg"
@@ -54,7 +54,7 @@ const LeaderboardPage = () => {
           />
         </div>
 
-        {/* Background Overlay and Pixel Effect */}
+        
         <div className="absolute inset-0 opacity-20 pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-cyan-500/10" />
           {[...Array(100)].map((_, i) => (
@@ -72,7 +72,7 @@ const LeaderboardPage = () => {
           ))}
         </div>
 
-        {/* Content */}
+       
         <div className="relative z-10 text-center">
           <div className="mb-8">
             <Trophy className="mx-auto text-teal-400 mb-4" size={64} />
@@ -98,7 +98,7 @@ const LeaderboardPage = () => {
         </div>
       </div>
 
-      {/* Right Side Leaderboard Section */}
+      
       <div className="w-1/2 p-12 bg-gray-900 overflow-y-auto">
         <div className="flex items-center mb-8">
           <div className="flex items-center justify-center w-full">
@@ -106,7 +106,7 @@ const LeaderboardPage = () => {
           </div>
         </div>
 
-        {/* Tabs */}
+       
         <div className="font-josefinSans flex mb-6 bg-gray-800 rounded-lg">
           {(['global', 'fps', 'moba'] as LeaderboardTab[]).map((tab) => (
             <button
@@ -123,7 +123,7 @@ const LeaderboardPage = () => {
           ))}
         </div>
 
-        {/* Leaderboard Table */}
+       
         <div className="font-josefinSans bg-gray-800 rounded-lg overflow-hidden">
           <table className="w-full">
             <thead className="bg-gray-700">
@@ -152,7 +152,7 @@ const LeaderboardPage = () => {
         </div>
       </div>
 
-      {/* Animation Styles */}
+    
       <style jsx global>{`
         @keyframes float {
           0% { transform: translateY(0); }

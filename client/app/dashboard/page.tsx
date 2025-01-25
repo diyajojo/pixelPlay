@@ -10,9 +10,9 @@ import {
   Clock,
   Trophy 
 } from 'lucide-react';
-import LandingPageLoader from '../components/loading'; // Import the loader
+import LandingPageLoader from '../components/loading'; 
 
-// Dummy player data (unchanged)
+
 const playerData = {
   level: 23,
   xp: 820,
@@ -51,9 +51,9 @@ const Dashboard = () => {
 
   return (
     <div className="max-h-screen bg-[#1a1f3c] text-gray-200 overflow-hidden relative">
-      {/* Rest of the existing Dashboard code remains the same */}
+     
       <div className="flex h-screen">
-        {/* Character Portrait */}
+       
         <div className="w-1/3 bg-gray-900 relative ">
           <div 
             className="absolute inset-0 bg-cover bg-center z-0 bg-no-repeat" 
@@ -68,9 +68,9 @@ const Dashboard = () => {
           <div className="absolute inset-0 flex items-center justify-center">
           </div>
         </div>
-        {/* Dashboard Content */}
+       
         <div className="w-2/3 px-8 py-12 space-y-6">
-          {/* Welcome Message */}
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -85,7 +85,7 @@ const Dashboard = () => {
             </p>
           </motion.div>
 
-          {/* Master Level Section */}
+       
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -159,7 +159,7 @@ const Dashboard = () => {
             </div>
           </motion.div>
 
-          {/* Game History Section */}
+       
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

@@ -50,21 +50,21 @@ const LandingPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-950 text-gray-200 overflow-hidden">
-      {/* Navigation */}
+     
       <nav className="font-noto fixed w-full z-50 top-0 border-b border-gray-800">
         <div className="container mx-auto px-4 py-2 flex flex-wrap justify-between items-center">
         <div className="flex-shrink-0 ml-0 flex items-center space-x-2">
   <img 
     src="/assets/logo.png"
     alt="PixelPlay Logo"
-    className="w-30 h-20" // Adjust size as needed
+    className="w-30 h-20" 
   />
   <span className="text-2xl font-bold text-teal-400">
     pixelPlay
   </span>
 </div>
           
-          {/* Mobile Menu Button */}
+
           <button 
             className="md:hidden p-2 text-gray-300 hover:text-teal-400"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -78,7 +78,7 @@ const LandingPage = () => {
             </svg>
           </button>
 
-          {/* Navigation Links */}
+        
           <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex w-full md:w-auto md:ml-auto flex-col md:flex-row items-center md:space-x-12 space-y-4 md:space-y-0 pb-4 md:pb-0 mt-4 md:mt-0`}>
             <button 
             onClick={() => router.push('/about')}
@@ -98,7 +98,7 @@ const LandingPage = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
+   
       <div className="relative min-h-screen flex items-center justify-center px-4 pt-24 md:pt-0">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950" />
@@ -106,7 +106,7 @@ const LandingPage = () => {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
-          {/* Left side content */}
+         
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h1 className="font-noto text-5xl md:text-7xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-teal-400 to-cyan-300 bg-clip-text text-transparent">
@@ -134,7 +134,7 @@ const LandingPage = () => {
             </div>
           </div>
 
-          {/* Right side content */}
+          
           <div className="font-josefinSans w-full md:w-1/2 relative">
             <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-teal-400/20 to-cyan-300/20 rounded-full animate-spin-slow" />
@@ -143,7 +143,7 @@ const LandingPage = () => {
                 <Gamepad2 className="text-teal-400" size={36} />
               </div>
             </div>
-            {/* Stats cards */}
+          
             <div className="absolute top-0 right-0 md:right-0 bg-gray-900/80 backdrop-blur-sm p-3 md:p-4 rounded-lg border border-teal-400/20">
               <div className="text-teal-400 font-bold text-xl md:text-2xl">120K</div>
               <div className="text-xs md:text-sm text-gray-400">Active Players</div>
@@ -158,7 +158,7 @@ const LandingPage = () => {
         <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-gray-950 to-transparent" />
       </div>
 
-      {/* Add custom animation keyframes */}
+    
       <style jsx global>{`
         @keyframes pixelMove {
           0% { transform: translateY(0) rotate(0deg); }

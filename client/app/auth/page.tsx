@@ -53,13 +53,13 @@ const SignupPage: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Implement actual authentication logic
+   
     console.log('Login attempted with:', { email, password });
   };
 
   return (
     <div className="min-h-screen bg-gray-950 text-gray-200 overflow-hidden relative">
-      {/* Pixel Background */}
+     
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-gray-950" />
         {renderPixelBackground()}
@@ -71,14 +71,13 @@ const SignupPage: React.FC = () => {
   <img 
     src="/assets/logo.png"
     alt="PixelPlay Logo"
-    className="w-30 h-20" // Adjust size as needed
+    className="w-30 h-20" 
   />
   <span className="text-2xl font-bold text-teal-400">
     PixelPlay
   </span>
 </div>
           
-          {/* Mobile Menu Button */}
           <button 
             className="md:hidden p-2 text-gray-300 hover:text-teal-400"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -92,7 +91,7 @@ const SignupPage: React.FC = () => {
             </svg>
           </button>
 
-          {/* Navigation Links */}
+         
           <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex w-full md:w-auto md:ml-auto flex-col md:flex-row items-center md:space-x-12 space-y-4 md:space-y-0 pb-4 md:pb-0 mt-4 md:mt-0`}>
             <a href="/" className="text-lg hover:text-teal-400 transition-colors">Home</a>
             <button 
@@ -111,7 +110,6 @@ const SignupPage: React.FC = () => {
         </div>
       </nav>
 
-      {/* Signup Container */}
       <div className="relative z-10 min-h-screen flex items-center justify-center px-4 pt-24 md:pt-0">
         <div className="w-full max-w-md bg-gray-900/80 backdrop-blur-sm rounded-2xl shadow-2xl border border-teal-400/20 p-8">
           <div className="text-center mb-8">
@@ -164,6 +162,7 @@ const SignupPage: React.FC = () => {
             </div>
 
             <button 
+              onClick={() => router.push('/dashboard')}
               type="submit"
               className="font-josefinSans w-full py-3 bg-gradient-to-r from-teal-400 to-cyan-300 text-gray-900 rounded-lg font-semibold hover:from-teal-500 hover:to-cyan-400 transition-all"
             >
@@ -204,7 +203,7 @@ const SignupPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Custom Animation Keyframes */}
+      
       <style jsx global>{`
         @keyframes pixelMove {
           0% { transform: translateY(0) rotate(0deg); }
