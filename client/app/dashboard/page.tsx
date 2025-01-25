@@ -50,7 +50,7 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#1a1f3c] text-gray-200 overflow-hidden relative">
+    <div className="max-h-screen bg-[#1a1f3c] text-gray-200 overflow-hidden relative">
       {/* Rest of the existing Dashboard code remains the same */}
       <div className="flex h-screen">
         {/* Character Portrait */}
