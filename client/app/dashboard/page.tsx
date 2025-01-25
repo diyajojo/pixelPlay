@@ -180,37 +180,7 @@ const Dashboard = () => {
             </div>
           </motion.div>
 
-          {/* Class Stats */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="font-josefinSans bg-gray-900/50 backdrop-blur-sm p-6 rounded-lg"
-          >
-            <h3 className="text-xl font-semibold mb-4">Class Stats</h3>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="flex items-center space-x-2">
-                <Bolt className="text-teal-400" size={24} />
-                <span className="text-lg">{playerData.durable}</span>
-                <span className="text-gray-400">Durable</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Zap className="text-cyan-400" size={24} />
-                <span className="text-lg">{playerData.nuker}</span>
-                <span className="text-gray-400">Nuker</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Activity className="text-purple-400" size={24} />
-                <span className="text-lg">{playerData.disabler}</span>
-                <span className="text-gray-400">Disabler</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <Shield className="text-yellow-400" size={24} />
-                <span className="text-lg">{playerData.difficulty}</span>
-                <span className="text-gray-400">Difficulty</span>
-              </div>
-            </div>
-          </motion.div>
+         
         </div>
       </div>
     </div>
