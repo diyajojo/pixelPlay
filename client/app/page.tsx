@@ -2,10 +2,21 @@
 import React, { useState, useEffect } from 'react';
 import { Gamepad2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import LandingPageLoader from './components/loading'; // Import the loader
 
 const LandingPage = () => {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  // Simulate loading state
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Adjust loading time as needed
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const renderPixelBackground = () => {
     const pixels = [];
@@ -33,14 +44,25 @@ const LandingPage = () => {
     return pixels;
   };
 
+  if (isLoading) {
+    return <LandingPageLoader />;
+  }
+
   return (
     <div className="min-h-screen bg-gray-950 text-gray-200 overflow-hidden">
       {/* Navigation */}
-      <nav className="fixed w-full z-50 top-0 border-b border-gray-800">
+      <nav className="font-noto fixed w-full z-50 top-0 border-b border-gray-800">
         <div className="container mx-auto px-4 py-2 flex flex-wrap justify-between items-center">
-          <div className="flex-shrink-0 ml-0 text-2xl font-bold text-teal-400">
-            PixelPlay
-          </div>
+        <div className="flex-shrink-0 ml-0 flex items-center space-x-2">
+  <img 
+    src="/assets/logo.png"
+    alt="PixelPlay Logo"
+    className="w-30 h-20" // Adjust size as needed
+  />
+  <span className="text-2xl font-bold text-teal-400">
+    pixelPlay
+  </span>
+</div>
           
           {/* Mobile Menu Button */}
           <button 
@@ -58,14 +80,18 @@ const LandingPage = () => {
 
           {/* Navigation Links */}
           <div className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex w-full md:w-auto md:ml-auto flex-col md:flex-row items-center md:space-x-12 space-y-4 md:space-y-0 pb-4 md:pb-0 mt-4 md:mt-0`}>
-            <a href="#about" className="text-lg hover:text-teal-400 transition-colors">About</a>
+            <button 
+            onClick={() => router.push('/about')}
+             className="text-lg hover:text-teal-400 transition-colors">About</button>
             <button 
               onClick={() => router.push('/leaderboard')} 
               className="text-lg hover:text-teal-400 transition-colors"
             >
               Leaderboard
             </button>
-            <button className="px-6 py-2 bg-gradient-to-r from-teal-400 to-cyan-300 text-gray-900 rounded-full font-semibold hover:from-teal-500 hover:to-cyan-400 transition-all w-full md:w-auto">
+            <button
+            onClick={() => router.push('/auth')}
+             className="px-6 py-2 bg-gradient-to-r from-teal-400 to-cyan-300 text-gray-900 rounded-full font-semibold hover:from-teal-500 hover:to-cyan-400 transition-all w-full md:w-auto">
               Login /Register
             </button>
           </div>
@@ -82,7 +108,7 @@ const LandingPage = () => {
         <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
           {/* Left side content */}
           <div className="w-full md:w-1/2 text-center md:text-left">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="font-noto text-5xl md:text-7xl font-bold mb-6 leading-tight">
               <span className="bg-gradient-to-r from-teal-400 to-cyan-300 bg-clip-text text-transparent">
                 LEVEL UP
               </span>
@@ -93,21 +119,23 @@ const LandingPage = () => {
                 GAMING
               </span>
             </h1>
-            <p className="text-lg md:text-xl mb-8 text-gray-400 max-w-xl mx-auto md:mx-0">
+            <p className="font-josefinSans text-lg md:text-xl mb-8 text-gray-400 max-w-xl mx-auto md:mx-0">
               Unleash epic gameplay, connect with gamers worldwide, and dominate the digital arena with PixelPlay.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
-              <button className="px-8 py-4 bg-gradient-to-r from-teal-400 to-cyan-300 text-gray-900 rounded-lg font-bold hover:from-teal-500 hover:to-cyan-400 transform hover:scale-105 transition-all">
+              <button
+              onClick={() => router.push('/auth')}
+               className="font-josefinSans px-8 py-4 bg-gradient-to-r from-teal-400 to-cyan-300 text-gray-900 rounded-lg font-bold hover:from-teal-500 hover:to-cyan-400 transform hover:scale-105 transition-all">
                 Join Battle
               </button>
-              <button className="px-8 py-4 border-2 border-teal-400 text-teal-400 rounded-lg font-bold hover:bg-teal-400/10 transform hover:scale-105 transition-all">
+              <button className="font-josefinSans px-8 py-4 border-2 border-teal-400 text-teal-400 rounded-lg font-bold hover:bg-teal-400/10 transform hover:scale-105 transition-all">
                 Explore Worlds
               </button>
             </div>
           </div>
 
           {/* Right side content */}
-          <div className="w-full md:w-1/2 relative">
+          <div className="font-josefinSans w-full md:w-1/2 relative">
             <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-teal-400/20 to-cyan-300/20 rounded-full animate-spin-slow" />
               <div className="absolute inset-4 bg-gradient-to-r from-teal-400/40 to-cyan-300/40 rounded-full animate-spin-slower" />
